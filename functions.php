@@ -4,7 +4,7 @@
 if (!defined('ABSPATH'))
 	exit;
 
-const IS_VITE_DEVELOPMENT = true;
+
 define('TEMPLATE_DIR', get_stylesheet_directory_uri());
 const SCRIPT_DIR = TEMPLATE_DIR . '/assets/js';
 define('VITE_SERVER', 'http://localhost:3000');
