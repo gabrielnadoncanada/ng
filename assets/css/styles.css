@@ -1,0 +1,71 @@
+/*
+Theme Name: NG Boilerplate
+Description: Wordpress Theme rapid development with Vite & Tailwindcss
+Author: Nadon Gabriel
+Requires at least: 5.3
+Tested up to: 6.0.2
+Requires PHP: 7.4
+Version: 0.4
+*/
+
+@import "tailwindcss/base";
+@import "./custom-utilities.css";
+@import "./menu.css";
+@import "./gravity-form.css";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* admin bar fix */
+body.admin-bar {
+    max-height: calc(100vh - 32px);
+}
+
+body {
+    @apply text-primary;
+}
+
+:where(.content, .is-root-container) :where(h1, h2, h3, h4, h5, h6, p) {
+    line-height: 1.4;
+
+}
+
+:root {
+    --font-family-sans: 'Poppins', sans-serif;
+}
+
+:where(.content, .is-root-container) p:not(:first-child){
+    margin-block-start: 1.5rem;
+}
+
+.col-sm-reverse {
+    @apply max-md:flex-col-reverse;
+}
+
+.content h1 {
+    @apply text-4xl
+}
+
+.content h2 {
+    @apply text-3xl
+}
+
+.content h3 {
+    @apply text-2xl
+}
+
+.content h4 {
+    @apply text-xl
+}
+
+.content h5 {
+    @apply text-lg
+}
+
+.content h6 {
+}
+
+.content :where(ol, ul, menu) {
+    list-style-type: revert;
+    padding: revert;
+    margin: revert;
+}

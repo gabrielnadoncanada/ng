@@ -1,0 +1,17 @@
+.d-none {
+    display: none !important;
+}
+
+.swiper-container-free-mode > .swiper-wrapper{
+    transition-timing-function : linear;
+}
+
+
+.nav-links {
+    @apply flex justify-between py-12 text-primary gap-4
+}
+
+
+.nav-next {
+    @apply text-right
+}
