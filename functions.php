@@ -128,7 +128,7 @@ function get_last_post_of_current_post_type()
 	wp_reset_postdata(); // Reset post data after custom query
 }
 
-require get_template_directory() . '/package.php';
+require get_template_directory() . '/Package.php';
 
 
 add_shortcode('leaflet_map', function(){
