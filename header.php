@@ -4,15 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script>
+        function hashHandler() {
+            return {
+                hash: window.location.hash,
+                modalOpen: false,
+                checkHash(hash) {
+                    return this.hash === '#' + hash;
+                },
+                init() {
+                    window.addEventListener('hashchange', () => {
+                        this.hash = window.location.hash;
+                    }, false);
+                    this.hash = window.location.hash;
+                }
+            }
+        }
+</script>
 	<?php wp_head() ?>
+
 </head>
-<body <?php body_class('flex flex-col') ?> x-data="{sidebarOpen: false,modalOpen: false}" :class="modalOpen ? 'overflow-hidden' : ''">
+<body <?php body_class('flex flex-col') ?> x-data="{sidebarOpen: false,modalOpen: false}"
+                                           :class="modalOpen ? 'overflow-hidden' : ''">
 <?php wp_body_open(); ?>
 
 
 <header x-data="{ open: false }" class="fixed w-full z-20">
 	<nav class="relative px-6 py-4 flex justify-between items-center">
-		<a class="text-3xl font-bold leading-none" href="/">
+		<a class="text-3xl font-bold leading-none" href="<?= get_current_language_code() == 'fr' ? '/' : '/en' ?>">
 			<img decoding="async" loading="lazy" width="150"
 			     src="<?= get_template_directory_uri() . '/assets/img/logo-hydravion-light.svg' ?>"
 			     alt="Hydravion Québec">
@@ -64,7 +83,7 @@
 </header>
 
 
-<main class="relative flex-grow transition-[margin-left] ease-in-out duration-300 bg-primary z-10 flex flex-col text-white  min-h-screen"
+<main class="relative flex-grow transition-[margin-left] ease-in-out duration-300  bg-primary flex flex-col text-white  min-h-screen"
       :class="sidebarOpen ? 'lg:ml-[490px]' : ''">
 
 

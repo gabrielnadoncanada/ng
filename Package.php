@@ -137,6 +137,7 @@ class Package
 					'id' => $post_id,
 					'price' => get_field('prix', $post_id) ?: '',
 					'isSelected' => false,
+					'leaflet' => get_field('leaflet_map') ?: '',
 					'taxonomies' => $this->get_post_taxonomies_terms($post_id),
 					'duration' => get_field('duree', $post_id) ?: '',
 					'length' => get_field('temps_de_vol', $post_id) ?: '',
@@ -215,7 +216,7 @@ class Package
 		$choices = [];
 
 		foreach ($this->posts as $post) {
-			$choices[] = ['text' => $post['text'], 'value' => $post['id'], 'price' => $post['price'], 'isSelected' => false];
+			$choices[] = ['text' => $post['title'], 'value' => $post['id'], 'price' => $post['price'], 'isSelected' => false];
 		}
 
 		return $choices;

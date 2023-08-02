@@ -84,6 +84,7 @@ module.exports = {
         'secondary': '#32c5f4',
         'tertiary': '#F6F6F6',
         'foreground': '#000000',
+        'foreground-gray': '#221f20',
         'foreground-light': '#222123',
         'danger': "#c02b0a"
       },
