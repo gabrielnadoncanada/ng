@@ -7,8 +7,8 @@
 }
 
 #leaflet-container .leaflet-modal {
-    padding: 40px;
-    position: absolute;
+    padding: 0;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;

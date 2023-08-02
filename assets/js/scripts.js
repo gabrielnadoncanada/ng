@@ -1,15 +1,7 @@
-function hashHandler() {
-    return {
-        hash: window.location.hash,
-        modalOpen: false,
-        checkHash(hash) {
-            return this.hash === '#' + hash;
-        },
-        init() {
-            window.addEventListener('hashchange', () => {
-                this.hash = window.location.hash;
-            }, false);
-            this.hash = window.location.hash;
-        }
-    }
-}
+
+((($) => {
+    $('.menu-item-has-children > a').on('click', function (e) {
+        e.preventDefault();
+        $(this).parent().toggleClass('active');
+    });
+})(jQuery));

@@ -1,15 +1,21 @@
 (function ($) {
     function magneticCursor($wrap) {
         $wrap = typeof $wrap == "undefined" ? $("body") : $wrap;
-        var $magnetics = $wrap.find(".magnetic").add($(".magnetic"));
-        $magnetics.on("mousemove", function (e) {
+
+        $wrap.on("mousemove", ".magnetic", function (e) {
             var $el = $("img", this),
-                bound = e.currentTarget.getBoundingClientRect(), coeff = 30,
-                hor = bound.width / 2 - (e.clientX - bound.left), ver = bound.height / 2 - (e.clientY - bound.top),
-                toX = hor / bound.width * coeff, toY = ver / bound.height * coeff,
+                bound = e.currentTarget.getBoundingClientRect(),
+                coeff = 150,
+                hor = bound.width / 2 - (e.clientX - bound.left),
+                ver = bound.height / 2 - (e.clientY - bound.top),
+                toX = hor / bound.width * coeff,
+                toY = ver / bound.height * coeff,
                 scaleX = ((bound.width + coeff + 5) / bound.width).toFixed(2),
-                scaleY = ((bound.height + coeff + 5) / bound.height).toFixed(2), toScale = Math.max(scaleX, scaleY);
-            gsap.killTweensOf($el), gsap.to($el, {
+                scaleY = ((bound.height + coeff + 5) / bound.height).toFixed(2),
+                toScale = Math.max(scaleX, scaleY);
+
+            gsap.killTweensOf($el);
+            gsap.to($el, {
                 duration: .75,
                 x: toX,
                 y: toY,
@@ -19,9 +25,11 @@
                 transformOrigin: "center",
                 force3D: !0
             })
-        }).on("mouseout", function (e) {
+        }).on("mouseout", ".magnetic", function (e) {
             var $el = $("img", this);
-            gsap.killTweensOf($el), gsap.to($el, {
+
+            gsap.killTweensOf($el);
+            gsap.to($el, {
                 duration: .6,
                 y: 0,
                 x: 0,

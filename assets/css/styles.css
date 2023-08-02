@@ -33,7 +33,7 @@ body {
     --font-family-sans: 'Poppins', sans-serif;
 }
 
-:where(.content, .is-root-container) p:not(:first-child){
+:where(.content, .is-root-container) p:not(:first-child) {
     margin-block-start: 1.5rem;
 }
 
@@ -42,23 +42,23 @@ body {
 }
 
 .content h1 {
-    @apply text-4xl
+    @apply text-4xl leading-normal
 }
 
 .content h2 {
-    @apply text-3xl
+    @apply text-3xl leading-normal
 }
 
 .content h3 {
-    @apply text-2xl
+    @apply text-2xl leading-normal
 }
 
 .content h4 {
-    @apply text-xl
+    @apply text-xl leading-normal
 }
 
 .content h5 {
-    @apply text-lg
+    @apply text-lg leading-normal
 }
 
 .content h6 {

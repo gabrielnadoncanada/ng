@@ -102,3 +102,10 @@ input::placeholder, textarea::placeholder {
 .gfield_error input, .gfield_error textarea, .gfield_error .gfield_select {
     @apply border-2 border-danger rounded-md;
 }
+
+/*.gform_button {*/
+/*    @apply transition-all duration-200 ease-in-out*/
+/*}*/
+/*.gform_button:hover  {*/
+/*    @apply bg-primary text-white cursor-pointer*/
+/*}*/
