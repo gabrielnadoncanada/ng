@@ -7,7 +7,7 @@
 	     alt="" width="4160" height="6240"/>
 		<div aria-hidden="true" class="absolute w-full  z-[-1] h-full bg-gradient-to-p-90 opacity-70"></div>
 	<div class="flex flex-col lg:flex-row gap-y-8 gap-x-20 justify-between text-white py-12 md:pb-[100px] px-6 relative max-w-[1536px] mx-auto">
-		<a class="text-sm leading-6 " href="/">
+		<a class="text-sm leading-6 " href="<?= get_current_language_code() == 'fr' ? '/' : '/en' ?>">
 		<img decoding="async" loading="lazy" width="250"
 		     src="<?= get_template_directory_uri() . '/assets/img/logo-hydravion-light.svg' ?>" alt="Hydravion Québec">
 		</a>
@@ -54,10 +54,10 @@
 			</div>
 		</div>
 	</div>
-	<div class="flex flex-col md:flex-row z-[21] gap-y-2 md:fixed bottom-0 w-full left-0 justify-between md:items-center bg-primary py-2 px-6">
+	<div class="flex flex-col md:flex-row z-[21] gap-y-2 md:fixed bottom-0 w-full left-0 justify-between md:items-center bg-foreground-gray py-2 px-6">
 		<a href="#nous-joindre" class="text-sm text-left leading-6 text-white hover:text-secondary"
-		        ><?= __('Nous joindre', 'ng') ?></a>
-		<p class="text-sm leading-6 text-white">@<?= date("Y") . "&nbsp;" . __('Hydravion Québec – Tous droits réservés', 'ng') ?></p>
+		        ><?= __('Contact us', 'ng') ?></a>
+		<p class="text-sm leading-6 text-white">@<?= date("Y") . "&nbsp;" . __('Hydravion Québec - All rights reserved', 'ng') ?></p>
 		<a class="text-sm leading-6 text-white hover:text-secondary flex" href="https://hebertcommunication.com">DESIGN&nbsp;+&nbsp;WEB&nbsp;→
 		<img decoding="async" loading="lazy" width="24" height="24"
 		     style="float:right;width: 24px;margin-left: 10px;"
@@ -70,14 +70,16 @@
 
 <div x-data="hashHandler()"
      x-show="checkHash('nous-joindre')"
-     x-transition:enter="transition ease-in-out duration-300 transform"
+     x-transition:enter="   duration-[750ms] transform"
      x-transition:enter-start="translate-y-full"
      x-transition:enter-end="-translate-y-0"
-     x-transition:leave="transition ease-in-out duration-300 transform"
+     x-transition:leave="   duration-[750ms] transform"
      x-transition:leave-start="-translate-y-0"
      x-transition:leave-end="translate-y-full"
 
-     class="z-30 fixed top-0 left-0 w-full h-screen flex items-center justify-center">
+     class="z-30 fixed top-0 left-0 w-full h-screen flex items-center justify-center"
+	style="transition: all; transition-duration: 750ms; transition-timing-function: cubic-bezier(0.5, 0.1, 0.1, 1) !important"
+	>
 	<a href="#" class="fixed right-0 top-0 z-10 p-6">
 		<svg class="h-[20px] w-[20px] text-white cursor-pointer hover:text-secondary" xmlns="http://www.w3.org/2000/svg"
 		     fill="none" viewBox="0 0 20 20" stroke="currentColor">
@@ -91,8 +93,8 @@
      alt="contact modal background" width="4160" height="6240"/>
 <div class="overflow-y-scroll w-full max-h-screen px-6 py-12 ">
 	<div class="relative z-20 text-center w-full   max-w-screen-md mx-auto ">
-	<h2 class="font-semibold text-5xl text-white"><?= __('Contactez-nous', 'ng') ?></h2>
-	<p class="mt-4 mb-12 text-white"><?= __('Une question ? N’hésitez pas à nous contacter', 'ng') ?></p>
+	<h2 class="font-semibold text-5xl text-white"><?= __('Contact us', 'ng') ?></h2>
+	<p class="mt-4 mb-12 text-white"><?= __('Have a question? Feel free to contact us', 'ng') ?></p>
 		<?= do_shortcode('[gravityform id="19" title="false" description="false" ajax="true"]') ?>
 </div>
 </div>
